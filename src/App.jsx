@@ -49,7 +49,9 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen transition-colors duration-300 max-w-2xl mx-auto p-4 shadow-lg">
+    <>
+    <title>To-Do-List</title>  
+    <div className="min-h-screen transition-colors duration-300 max-w-2xl mx-auto p-4 pb-2 shadow-lg/50 rounded-lg">
       <div className="flex justify-between items-center mb-6">
         <h4 className="text-2xl font-bold ">Daily To-Do List</h4>
         <button
@@ -76,6 +78,7 @@ function App() {
         )}
       </div>
     </div>
+    </>
   )
 }
 
