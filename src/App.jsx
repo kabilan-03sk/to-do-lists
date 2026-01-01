@@ -49,34 +49,37 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen transition-colors duration-300 max-w-2xl mx-auto p-4 shadow-lg">
-      <div className="flex justify-between items-center mb-6">
-        <h4 className="text-2xl font-bold ">Daily To-Do List</h4>
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-gray-800 dark:text-white font-medium"
-          aria-label="Toggle dark mode"
-        >
-          {darkMode ? '☀︎ Light' : '☾⋆ Dark'}
-        </button>
-      </div>
+    <>
+      <title>To-Do-list</title>
+      <div className="min-h-screen transition-colors duration-300 max-w-2xl mx-auto p-4 pb-2 shadow-lg/50 rounded-lg">
+        <div className="flex justify-between items-center mb-6">
+          <h4 className="text-2xl font-bold ">Daily To-Do List</h4>
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-gray-800 dark:text-white font-medium"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? '☀︎ Light' : '☾⋆ Dark'}
+          </button>
+        </div>
 
-      <TodoForm addTodo={addTodo} />
-      <div className="space-y-2">
-        {todos.map(todo => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            toggleTodo={toggleTodo}
-            deleteTodo={deleteTodo}
-          />
-        ))}
-        {todos.length === 0 && (
-          <p className="text-center text-gray-500 mt-8">No tasks yet. Add one above!</p>
-        )}
+        <TodoForm addTodo={addTodo} />
+        <div className="space-y-2">
+          {todos.map(todo => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+          {todos.length === 0 && (
+            <p className="text-center text-gray-500 mt-8">No tasks yet. Add one above!</p>
+          )}
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
 
 export default App
